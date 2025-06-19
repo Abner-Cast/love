@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cajita Antiestrés 🌸</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fbeff5;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 25px;
+    }
+    h1 {
+      text-align: center;
+      color: #cc4b8c;
+    }
+    .section {
+      margin-bottom: 25px;
+    }
+    .checklist input {
+      margin-right: 10px;
+    }
+    .quote {
+      font-style: italic;
+      color: #555;
+      background: #ffe6f0;
+      padding: 10px;
+      border-left: 4px solid #cc4b8c;
+    }
+    .message {
+      font-size: 1.2em;
+      text-align: center;
+      background: #eaf7ea;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 10px;
+      color: #2f7d59;
+    }
+    button {
+      background: #cc4b8c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    button:hover {
+      background: #aa3d73;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💖 Cajita Antiestrés</h1>
+
+    <div class="section">
+      <h3>🌤️ Mensaje del día</h3>
+      <div id="dailyMessage" class="message"></div>
+    </div>
+
+    <div class="section">
+      <h3>🧘‍♀️ Checklist de autocuidado</h3>
+      <div class="checklist">
+        <label><input type="checkbox"> Tomé mi infusión</label><br/>
+        <label><input type="checkbox"> Comí algo nutritivo</label><br/>
+        <label><input type="checkbox"> Respiré profundo al menos 3 veces</label><br/>
+        <label><input type="checkbox"> Leí un mensajito de Abner 🥹</label>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>🌸 Palabras desde el corazón de Abner</h3>
+      <p class="quote">“Tú no estás sola en esto. Cada día, incluso los que parecen grises, yo te acompaño con todo mi amor.”</p>
+    </div>
+
+    <div class="section" style="text-align:center;">
+      <button onclick="newMessage()">💌 Sorpréndeme</button>
+      <div id="surpriseMessage" class="message" style="display:none;"></div>
+    </div>
+  </div>
+
+  <script>
+    const mensajes = [
+      "Hoy no tienes que ser perfecta. Solo tienes que ser tú.",
+      "Respira. Estás haciendo lo mejor que puedes. Y eso basta.",
+      "Cierra los ojos y piensa en mí abrazándote. Estoy aquí.",
+      "Tu fuerza no está en ocultar lo que sientes, sino en abrazarlo con amor.",
+      "Este día también pasará, y yo seguiré aquí, contigo."
+    ];
+
+    document.getElementById("dailyMessage").innerText = mensajes[Math.floor(Math.random() * mensajes.length)];
+
+    function newMessage() {
+      const msg = mensajes[Math.floor(Math.random() * mensajes.length)];
+      const box = document.getElementById("surpriseMessage");
+      box.innerText = msg;
+      box.style.display = "block";
+    }
+  </script>
+</body>
+</html>
